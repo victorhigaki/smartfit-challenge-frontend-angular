@@ -15,7 +15,7 @@ export class FormsComponent implements OnInit {
   
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      period: [],
+      hour: [],
       showClosed: [false],
     })
   }
