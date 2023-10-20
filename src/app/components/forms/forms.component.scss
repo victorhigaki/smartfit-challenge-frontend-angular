@@ -57,3 +57,32 @@
     position: absolute;
     right: 0px;
 }
+
+.form-group .buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-group .buttons .btn {
+    padding: 12px 20px;
+    border-radius: 5px;
+    width: 300px;
+    border: none;
+    margin: 8px;
+
+    color: black;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.form-group .buttons .btn.btn-yellow {
+    background-color: var(--yellow);
+}
+
+.form-group .buttons .btn.btn-light {
+    background-color: white;
+    border: 1px solid var(--light-grey);
+}
