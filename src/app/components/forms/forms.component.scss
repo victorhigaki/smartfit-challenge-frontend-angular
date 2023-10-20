@@ -58,6 +58,30 @@
     right: 0px;
 }
 
+.form-group .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+    gap: 8px;
+}
+
+.form-group .checkbox-wrapper span {
+    position: absolute;
+    right: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group .checkbox-wrapper span .result-value{
+    font-size: 24px;
+    font-weight: 700;
+}
+
 .form-group .btn-wrapper {
     display: flex;
     gap: 12px;
