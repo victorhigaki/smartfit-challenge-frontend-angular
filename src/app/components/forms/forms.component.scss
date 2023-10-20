@@ -50,36 +50,11 @@
 
 .form-group .radio-wrapper:nth-last-child(3) {
     border-bottom: 1px solid var(--light-text);
-    margin-bottom: 32px;
 }
 
 .form-group .radio-wrapper span {
     position: absolute;
     right: 0px;
-}
-
-.form-group .checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    position: relative;
-    gap: 8px;
-}
-
-.form-group .checkbox-wrapper span {
-    position: absolute;
-    right: 0px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.form-group .checkbox-wrapper span .result-value{
-    font-size: 24px;
-    font-weight: 700;
 }
 
 .form-group .btn-wrapper {
@@ -99,6 +74,7 @@
     padding: 14px;
     width: 25%;
     border: none;
+    cursor: pointer;
 }
 
 .form-group .btn-wrapper .btn-primary {
@@ -108,4 +84,16 @@
 .form-group .btn-wrapper .btn-secondary {
     background-color: transparent;
     border: 2px solid var(--light-text);
+}
+
+.form-group .checkbox-wrapper {
+    color: var(--light-grey);
+    margin: 32px 0;
+    position: relative;
+    width: 100%;
+}
+
+.form-group .checkbox-wrapper span {
+    position: absolute;
+    right: 0;
 }
