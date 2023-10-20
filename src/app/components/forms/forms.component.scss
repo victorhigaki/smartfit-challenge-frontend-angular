@@ -31,9 +31,29 @@
     font-size: 24px;
     color: var(--medium-text);
     font-weight: 300;
+    margin-top: 32px;
+    margin-bottom: 8px;
 }
 
-.form-radios {
-    border-top: 1px solid var(--light-text);
+.form-group .radio-wrapper {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 8px 4px;
+
+    border-top: 1px solid var(--light-text);
+    position: relative;
+    color: var(--medium-text);
+}
+
+.form-group .radio-wrapper:nth-last-child(3) {
+    border-bottom: 1px solid var(--light-text);
+    margin-bottom: 32px;
+}
+
+.form-group .radio-wrapper span {
+    position: absolute;
+    right: 0px;
 }
