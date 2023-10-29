@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UnidadesService } from 'src/app/services/unidades.service';
+import { GetUnitsService } from 'src/app/services/get-units.service';
 
 @Component({
   selector: 'app-forms',
@@ -12,7 +12,7 @@ export class FormsComponent implements OnInit {
   results = [];
   formGroup!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private unidadesService: UnidadesService) { }
+  constructor(private formBuilder: FormBuilder, private unitService: GetUnitsService) { }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -20,8 +20,8 @@ export class FormsComponent implements OnInit {
       showClosed: [false],
     })
 
-    this.unidadesService.get().subscribe((res) => {
-      console.log(res);
+    this.unitService.getAllUnits().subscribe((data) => {
+      console.log(data);
     })
   }
 
