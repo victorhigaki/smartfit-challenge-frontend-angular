@@ -11,7 +11,7 @@ import { Location } from 'src/app/types/location.interface';
 export class FormsComponent implements OnInit {
 
   results: Location[] = [];
-  originalResults: Location[] = [];
+  filteredResults: Location[] = [];
   formGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private unitService: GetUnitsService) { }
@@ -24,15 +24,15 @@ export class FormsComponent implements OnInit {
 
     this.unitService.getAllUnits().subscribe((data) => {
       this.results = data.locations;
-      this.originalResults = data.locations;
+      this.filteredResults = data.locations;
     })
   }
 
   onSubmit() {
-    if (this.formGroup.value.showClosed) {
-      this.results = this.originalResults
+    if (!this.formGroup.value.showClosed) {
+      this.filteredResults = this.results.filter(result => result.opened)
     } else {
-      this.results = this.originalResults.filter(result => result.opened)
+      this.filteredResults = this.results
     }
   }
 
