@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { FilterUnitsService } from 'src/app/services/filter-units.service';
 import { GetUnitsService } from 'src/app/services/get-units.service';
 import { Location } from 'src/app/types/location.interface';
 
@@ -9,12 +10,14 @@ import { Location } from 'src/app/types/location.interface';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
-
   results: Location[] = [];
   filteredResults: Location[] = [];
   formGroup!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private unitService: GetUnitsService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private unitService: GetUnitsService,
+    private filterUnitsService: FilterUnitsService) { }
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -29,11 +32,8 @@ export class FormsComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.formGroup.value.showClosed) {
-      this.filteredResults = this.results.filter(result => result.opened)
-    } else {
-      this.filteredResults = this.results
-    }
+    let [showClosed, hour] = this.formGroup.value;
+    this.filteredResults = this.filterUnitsService.filter(this.results, showClosed, hour);
   }
 
   onClean() {
