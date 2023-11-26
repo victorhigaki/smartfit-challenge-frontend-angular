@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { GetUnitsService } from './services/get-units.service';
+import { Location } from './types/location.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'challenge-smartsite';
+  showList = new BehaviorSubject(false);
+  unitsList: Location[] = [];
+
+  constructor(private unitService: GetUnitsService) { }
+
+  onSubmit() {
+    this.unitsList = this.unitService.getFilteredUnits();
+    this.showList.next(true);
+  }
 }
