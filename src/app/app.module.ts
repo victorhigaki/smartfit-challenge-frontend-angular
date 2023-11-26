@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CardsListComponent } from './components/cards-list/cards-list.component
     HeaderComponent,
     FormsComponent,
     CardsListComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
